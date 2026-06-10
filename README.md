@@ -44,15 +44,6 @@ Tested against the original KPI spec on a Windows 11 laptop, CPU only (no GPU).
 ---
 
 ## Architecture
-
-## Home Page
-![ta_vs_snr_clean_vs_robust)](images/ta_vs_snr_clean_vs_robust.png)
-
-## Login Page
-![Login Page](images/login.png)
-
-## Dashboard
-![Dashboard](images/dashboard.png)
 ### Stage 1 — Audio Frontend
 - Pre-emphasis (high-frequency boost for consonant clarity)
 - 40-band log-Mel filterbank, 25 ms window, 10 ms hop
