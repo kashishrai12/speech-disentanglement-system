@@ -1,0 +1,31 @@
+<style>
+.kpi-table { width:100%; border-collapse:collapse; font-size:14px; color:var(--color-text-primary); margin:0; }
+.kpi-table thead th { text-align:left; padding:10px 12px; font-weight:500; color:var(--color-text-secondary); border-bottom:1px solid var(--color-border-tertiary); }
+.kpi-table tbody td { padding:10px 12px; border-bottom:1px solid var(--color-border-tertiary); }
+.kpi-table tbody tr:last-child td { border-bottom:none; }
+.kpi-status { display:inline-block; padding:2px 10px; border-radius:12px; font-size:12px; font-weight:500; }
+.kpi-pass { background:#EAF3DE; color:#27500A; }
+.kpi-partial { background:#FAEEDA; color:#633806; }
+@media (prefers-color-scheme: dark) {
+  .kpi-pass { background:#27500A; color:#C0DD97; }
+  .kpi-partial { background:#633806; color:#FAC775; }
+}
+.kpi-section { padding:6px 12px; font-size:12px; font-weight:500; color:var(--color-text-secondary); background:var(--color-background-secondary); }
+.kpi-num { font-variant-numeric: tabular-nums; }
+</style>
+<table class="kpi-table">
+  <thead>
+    <tr><th>KPI</th><th>Target</th><th>Result</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="4" class="kpi-section">System</td></tr>
+    <tr><td>Total parameters</td><td class="kpi-num">&lt; 3M</td><td class="kpi-num">1.42M</td><td><span class="kpi-status kpi-pass">Pass</span></td></tr>
+    <tr><td>xRT (real-time factor)</td><td class="kpi-num">&lt; 0.20</td><td class="kpi-num">0.090</td><td><span class="kpi-status kpi-pass">Pass</span></td></tr>
+    <tr><td>False accepts per hour</td><td class="kpi-num">&lt; 1</td><td>0 in 100 tests</td><td><span class="kpi-status kpi-pass">Pass</span></td></tr>
+    <tr><td colspan="4" class="kpi-section">True accept rate by noise level</td></tr>
+    <tr><td>TA at 30 dB SNR</td><td class="kpi-num">≥ 99%</td><td class="kpi-num">60%</td><td><span class="kpi-status kpi-partial">Partial</span></td></tr>
+    <tr><td>TA at 10 dB SNR</td><td class="kpi-num">≥ 90%</td><td class="kpi-num">60%</td><td><span class="kpi-status kpi-partial">Partial</span></td></tr>
+    <tr><td>TA at 0 dB SNR</td><td class="kpi-num">≥ 90%</td><td class="kpi-num">47%</td><td><span class="kpi-status kpi-partial">Partial</span></td></tr>
+    <tr><td>TA at -5 dB SNR</td><td class="kpi-num">≥ 90%</td><td class="kpi-num">33%</td><td><span class="kpi-status kpi-partial">Partial</span></td></tr>
+  </tbody>
+</table>
