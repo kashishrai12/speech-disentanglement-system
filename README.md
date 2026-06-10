@@ -8,13 +8,20 @@ A real-time cascaded keyword spotting and speaker verification system that trigg
 
 ## What it does
 
-Microphone → [VAD + Mel] → KWS ("yes"?) ──no──→ ignore
-│ yes
-↓
-SV (user_1?) ────no──→ ignore
-│ yes
-↓
-Decision Fusion → 🟢 ACCEPT
+Microphone → [VAD + Mel] → KWS ("yes"?) ──no──→ ignore 
+
+│ yes 
+
+↓ 
+
+SV (user_1?) ────no──→ ignore 
+
+│ yes 
+
+↓ 
+
+Decision Fusion → 🟢 ACCEPT 
+
 
 VoxGate listens continuously, but only fires when **both** stages agree: the keyword spotter recognizes the target word AND the speaker verifier matches the enrolled voice. The two-stage cascade is critical — KWS alone false-accepts anyone saying "yes", SV alone false-accepts the right person saying anything.
 
@@ -34,7 +41,7 @@ Tested against the original KPI spec on a Windows 11 laptop, CPU only (no GPU).
 | **True Accept @ 0dB SNR** | ≥ 90% | 47% | ⚠️ partial |
 | **True Accept @ -5dB SNR** | ≥ 90% | 33% | ⚠️ partial |
 
-**The honest residual:** TA falls short of the spec at all noise levels. This is a fundamental capacity limit of distilling a 6M-parameter teacher into a 1.2M student under a hard parameter budget. Documented as a known trade-off.
+**Residual:** TA falls short of the spec at all noise levels. This is a fundamental capacity limit of distilling a 6M-parameter teacher into a 1.2M student under a hard parameter budget. Documented as a known trade-off.
 
 ---
 
