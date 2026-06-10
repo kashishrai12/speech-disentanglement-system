@@ -11,13 +11,11 @@ A real-time cascaded keyword spotting and speaker verification system that trigg
 Microphone → [VAD + Mel] → KWS ("yes"?) ──no──→ ignore 
 
 │ yes 
-
 ↓ 
 
 SV (user_1?) ────no──→ ignore 
 
 │ yes 
-
 ↓ 
 
 Decision Fusion → 🟢 ACCEPT 
@@ -92,7 +90,7 @@ Tested against the original KPI spec on a Windows 11 laptop, CPU only (no GPU).
 ---
 
 ## Repository Structure
-
+```text
 speech_disentanglement/
 ├── src/
 │   ├── audio_frontend.py        # DSP + log-Mel features (two paths: inference & training)
@@ -125,6 +123,7 @@ speech_disentanglement/
 │   ├── user_1_robust.pt         # Profile for robust SV (default)
 │   └── user_1_yes_clips/        # Reference recordings
 └── data/                        # Datasets (gitignored — see Setup)
+```
 
 ---
 
