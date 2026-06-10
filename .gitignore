@@ -1,0 +1,51 @@
+# Datasets — NEVER commit
+data/
+*.flac
+*.wav
+!profiles/user_1_clips/*.wav
+!profiles/user_1_yes_clips/*.wav
+
+# Large model files
+models/pretrained/
+models/trained/sv_distilled.pt
+models/trained/sv_distilled_robust.pt
+models/trained/kws_best.pt
+models/trained/kws_best_checkpoint.pt
+models/trained/*.pt
+
+# Allow small checkpoint summaries / logs
+!models/trained/training_log.txt
+!models/trained/distill_log.txt
+!models/trained/distill_robust_log.txt
+
+# Profiles — keep small ones, exclude any backups
+profiles/*_backup.pt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
+# Environments
+.venv/
+venv/
+env/
+*.env
+
+# Notebook / OS
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Local installer artifacts
+miniconda.exe
+*.exe
+
+staged_preview.txt
